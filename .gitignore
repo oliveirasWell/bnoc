@@ -5,3 +5,7 @@ log
 condaenv.txt
 .gitignore
 __pycache__
+bnoc/bnoc.simg
+bnoc/ssh.sh
+/bnoc/bnoc.simg
+/bnoc/ssh.sh

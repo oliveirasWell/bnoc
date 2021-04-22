@@ -1,0 +1,15 @@
+Bootstrap: docker
+From: continuumio/miniconda3
+
+%files
+     ./* /opt
+    ./environment-singularity.yml  /opt/environment-singularity.yml
+
+%post
+    /opt/conda/bin/conda env create -f ./opt/environment-singularity.yml
+    echo "alias pyttt=\"/opt/conda/envs/$(head -n 1 /opt/environment-singularity.yml | cut -f 2 -d ' ')/bin/python\"" >> /.bashrc
+    . /opt/conda/etc/profile.d/conda.sh
+    conda activate mfbn
+
+%runscript
+    exec "$@"
