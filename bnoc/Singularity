@@ -2,7 +2,7 @@ Bootstrap: docker
 From: continuumio/miniconda3
 
 %files
-     ./* /opt
+    ./* /opt
     ./environment-singularity.yml  /opt/environment-singularity.yml
 
 %post
