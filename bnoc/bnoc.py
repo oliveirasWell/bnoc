@@ -354,6 +354,10 @@ class bnoc(object):  # BNOC app
             self.log.warning('Arff format still under development.')
             sys.exit(1)
 
+        # Save result on cloud
+        if self.options.save_cloud:
+            os.system('sh scripts/send_file.sh ' + output + '.ncol')
+
     def save_npy(self, output):
 
         # Save npy
@@ -445,6 +449,11 @@ class bnoc(object):  # BNOC app
                 for matrix in self.matrices:
                     d['edges'] += numpy.count_nonzero(matrix)
                 json.dump(d, f, indent=4)
+
+            # Save result on cloud
+            if self.options.save_cloud:
+                os.system('sh scripts/send_file.sh ' + output + '-inf.json')
+
             if self.options.output_npy:
                 self.save_npy(output)
             if self.options.output_text:
