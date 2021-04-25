@@ -2,8 +2,8 @@
 	"output_directory": "output",
 	"output": "bipartite-time-ncol",
 	"vertices": [
-		50000,
-		50000
+		100000,
+		100000
 	],
 	"schema": [
 		[0,1]
@@ -46,5 +46,6 @@
 	"save_ncol": true,
 	"save_cover": false,
 	"save_membership": false,
-	"save_overlap": false
+	"save_overlap": false,
+	"save_cloud": true
 }

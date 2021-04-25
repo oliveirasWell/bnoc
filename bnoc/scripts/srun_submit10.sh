@@ -6,7 +6,7 @@
 #SBATCH --partition=normal
 #SBATCH --mail-user=wellington.oliveira@estudante.ufscar.br
 #SBATCH --mail-type=ALL
-#SBATCH --mem=320000MB
+#SBATCH --mem=310000MB
 #SBATCH --account=usuario
 
 . send_notification.sh
@@ -20,13 +20,14 @@ module load singularity
 sendOutputFile() {
   mv "${SLURM_JOB_ID}.out" "${SLURM_JOB_ID}.txt"
   sendFile "${SLURM_JOB_ID}.txt"
+  rm -rf "${SLURM_JOB_ID}.out" "${SLURM_JOB_ID}.txt"
 }
 
 sendMsg "Job ${SLURM_JOB_ID} starting"
 
 echo "Starting..."
 
-srun singularity run --bind=/var/spool/slurm:/var/spool/slurm bnoc.simg /opt/conda/envs/mfbn/bin/python /opt/bnoc.py -cnf /opt/bipartite-time-ncol.json
+srun singularity run --bind=/var/spool/slurm:/var/spool/slurm bnoc.simg /opt/conda/envs/mfbn/bin/python /opt/bnoc.py -cnf /opt/bipartite-time-ncol10.json
 
 retCode=$?
 if [[ "$retCode" -ne 0 ]]; then
@@ -34,7 +35,6 @@ if [[ "$retCode" -ne 0 ]]; then
   sendOutputFile
   exit 1
 fi
-
 echo "Finished!"
 
 sendOutputFile

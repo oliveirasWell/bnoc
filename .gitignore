@@ -9,3 +9,4 @@ bnoc/bnoc.simg
 bnoc/scripts/ssh.sh
 /bnoc/bnoc.simg
 /bnoc/scripts/ssh.sh
+/bnoc/scripts/properties.sh
