@@ -18,7 +18,6 @@ echo \"Setup Environment...\"
 module purge
 module load singularity
 
-
 sendOutputFile() {
   cp \"\${SLURM_JOB_ID}.out\" \"\${SLURM_JOB_ID}.txt\"
   sendFile \"\${SLURM_JOB_ID}.txt\"
@@ -32,6 +31,7 @@ srun singularity run --bind=/var/spool/slurm:/var/spool/slurm bnoc.simg /opt/con
 retCode=\$?
 echo \"\$retCode\"
 if [[ \"\$retCode\" -ne 0 ]]; then
+  echo \"An error accrued\"
   sendErr
   sendOutputFile
   exit 1
@@ -39,8 +39,8 @@ fi
 echo \"Finished!\"
 
 sendOutputFile
-sendFile output/bipartite-time-ncol-inf.json
+sendFile output$1/bipartite-time-ncol-inf.json
 tar -cvf  \"\${SLURM_JOB_ID}.tar\" \"output$1\"
-sendFile \"\${SLURM_JOB_ID}.tar\"
+rclone copy \"\${SLURM_JOB_ID}.tar\" \"cloud:hpc/containers/outputs/\"
 
 sendMsg \"Job \${SLURM_JOB_ID} finished :D\""
