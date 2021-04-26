@@ -5,7 +5,7 @@ echo "#!/bin/bash
 #SBATCH -o %j.out # Name of stdout output file (%j expands to jobId)
 #SBATCH -N 1 # Total number of nodes requested
 #SBATCH -t 01:30:00 # Run time (hh:mm:ss) - 1.5 hours
-#SBATCH --partition=normal
+#SBATCH --partition=fast
 #SBATCH --mail-user=wellington.oliveira@estudante.ufscar.br
 #SBATCH --mail-type=ALL
 #SBATCH --mem=321000MB
@@ -40,7 +40,7 @@ echo \"Finished!\"
 
 sendOutputFile
 sendFile output/bipartite-time-ncol-inf.json
-tar -cvf  \"\${SLURM_JOB_ID}.tar\" output
+tar -cvf  \"\${SLURM_JOB_ID}.tar\" \"output$1\"
 sendFile \"\${SLURM_JOB_ID}.tar\"
 
 sendMsg \"Job \${SLURM_JOB_ID} finished :D\""
