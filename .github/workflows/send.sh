@@ -14,16 +14,5 @@ echo "${RCLONE_CONF}" | base64 -d >> "${RCLONE_FILE}"
 
 echo "Enviando arquivos..."
 files=( "bnoc.simg" )
-NOW=$(date +'%Y%m%d%H%M%S')
-for filename in "${files[@]}"; do
-  if [[ -f $filename ]]; then
-    path="$(dirname "${filename}")"
-    filename="$(basename "${filename}")"
-    if [[ "$filename" == *.* ]]; then
-      dest="${filename%.*}_${NOW}.${filename##*.}"
-    else
-      dest="${filename}_${NOW}"
-    fi
-    rclone copyto "${path}/${filename}" "cloud:hpc/containers/${COLLECTION_CONTAINER}/${dest}"
-  fi
-done
+
+rclone copyto "bnoc.simg" "cloud:hpc/containers/${COLLECTION_CONTAINER}/bnoc.simg"
