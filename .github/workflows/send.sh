@@ -13,6 +13,5 @@ echo "Configurando rclone..."
 echo "${RCLONE_CONF}" | base64 -d >> "${RCLONE_FILE}"
 
 echo "Enviando arquivos..."
-files=( "bnoc.simg" )
 
 rclone copyto "bnoc.simg" "cloud:hpc/containers/${COLLECTION_CONTAINER}/bnoc.simg"
