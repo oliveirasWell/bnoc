@@ -23,4 +23,6 @@ jobs:
         env:
           COLLECTION_CONTAINER: ${{ secrets.COLLECTION_CONTAINER }}
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+          BOTKEY: ${{ secrets.BOTKEY }}
+          CHATID: ${{ secrets.CHATID }}
         run: /bin/bash .github/workflows/send.sh
