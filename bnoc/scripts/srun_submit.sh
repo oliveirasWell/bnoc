@@ -8,7 +8,7 @@ echo "#!/bin/bash
 #SBATCH --partition=normal
 #SBATCH --mail-user=wellington.oliveira@estudante.ufscar.br
 #SBATCH --mail-type=ALL
-#SBATCH --mem=300000MB
+#SBATCH --mem=320000MB
 #SBATCH --account=usuario
 
 . send_notification.sh
