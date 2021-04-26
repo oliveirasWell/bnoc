@@ -3,12 +3,12 @@
 echo "#!/bin/bash
 #SBATCH -J bnoc # Job name
 #SBATCH -o %j.out # Name of stdout output file (%j expands to jobId)
-#SBATCH -N 1 # Total number of nodes requested
-#SBATCH -t 01:30:00 # Run time (hh:mm:ss) - 1.5 hours
+#SBATCH -N 2 # Total number of nodes requested
+#SBATCH -t 02:00:00 # Run time (hh:mm:ss) - 1.5 hours
 #SBATCH --partition=fast
 #SBATCH --mail-user=wellington.oliveira@estudante.ufscar.br
 #SBATCH --mail-type=ALL
-#SBATCH --mem=321000MB
+#SBATCH --mem=321500MB
 #SBATCH --account=usuario
 
 . send_notification.sh
