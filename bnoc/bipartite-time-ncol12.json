@@ -2,8 +2,8 @@
 	"output_directory": "output12",
 	"output": "bipartite-time-ncol",
 	"vertices": [
-		94000,
-		94000
+		93000,
+		93000
 	],
 	"schema": [
 		[0,1]

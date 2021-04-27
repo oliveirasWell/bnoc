@@ -27,7 +27,7 @@ sendMsg \"Job \${SLURM_JOB_ID} starting\"
 
 echo \"Starting...\"
 
-srun singularity run --bind=/var/spool/slurm:/var/spool/slurm bnoc.simg /opt/conda/envs/mfbn/bin/python /opt/bnoc.py -cnf \"/opt/bipartite-time-ncol$1.json\"
+srun --mpi=pmix_v2 singularity run --bind=/var/spool/slurm:/var/spool/slurm bnoc.simg /opt/conda/envs/mfbn/bin/python /opt/bnoc.py -cnf \"/opt/bipartite-time-ncol$1.json\"
 retCode=\$?
 echo \"\$retCode\"
 if [[ \"\$retCode\" -ne 0 ]]; then
