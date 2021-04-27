@@ -39,8 +39,7 @@ fi
 echo \"Finished!\"
 
 sendOutputFile
-sendFile \"output$1/bipartite-time-ncol$1-inf.json\"
-tar -cvf  \"\${SLURM_JOB_ID}_$1.tar\" \"output$1\"
+tar -cvf  \"\${SLURM_JOB_ID}_$1.tar\" \"output_$1\"
 rclone copy \"\${SLURM_JOB_ID}_$1.tar\" \"cloud:hpc/containers/outputs/\"
 
 sendMsg \"Job \${SLURM_JOB_ID} finished :D\""
