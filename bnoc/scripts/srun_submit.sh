@@ -19,8 +19,8 @@ module purge
 module load singularity
 
 sendOutputFile() {
-  cp \"\${SLURM_JOB_ID}.out\" \"\${SLURM_JOB_ID}.txt\"
-  sendFile \"\${SLURM_JOB_ID}.txt\"
+  cp \"\${SLURM_JOB_ID}.out\" \"\${SLURM_JOB_ID}_$1.txt\"
+  sendFile \"\${SLURM_JOB_ID}_$1.txt\"
 }
 
 sendMsg \"Job \${SLURM_JOB_ID} starting\"
@@ -39,8 +39,8 @@ fi
 echo \"Finished!\"
 
 sendOutputFile
-sendFile output$1/bipartite-time-ncol-inf$1.json
-tar -cvf  \"\${SLURM_JOB_ID}.tar\" \"output$1\"
-rclone copy \"\${SLURM_JOB_ID}.tar\" \"cloud:hpc/containers/outputs/\"
+sendFile \"output$1/bipartite-time-ncol$1-inf.json\"
+tar -cvf  \"\${SLURM_JOB_ID}_$1.tar\" \"output$1\"
+rclone copy \"\${SLURM_JOB_ID}_$1.tar\" \"cloud:hpc/containers/outputs/\"
 
 sendMsg \"Job \${SLURM_JOB_ID} finished :D\""

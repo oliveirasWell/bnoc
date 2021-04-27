@@ -2,15 +2,15 @@
 	"output_directory": "output7",
 	"output": "bipartite-time-ncol7",
 	"vertices": [
-		95000,
-		95000
+		110,
+		110
 	],
 	"schema": [
 		[0,1]
 	],
 	"communities": [
-		100,
-		100
+		2,
+		2
 	],
 	"x": [
 		0,
