@@ -3,7 +3,7 @@
 echo "#!/bin/bash
 #SBATCH -J bnoc_$1 # Job name
 #SBATCH -o %j.out # Name of stdout output file (%j expands to jobId)
-#SBATCH -N 2 # Total number of nodes requested
+#SBATCH -N 1 # Total number of nodes requested
 #SBATCH -t 03:00:00
 #SBATCH --partition=fast
 #SBATCH --mail-user=wellington.oliveira@estudante.ufscar.br
@@ -39,7 +39,7 @@ fi
 echo \"Finished!\"
 
 sendOutputFile
-sendFile output$1/bipartite-time-ncol-inf.json
+sendFile output$1/bipartite-time-ncol-inf$1.json
 tar -cvf  \"\${SLURM_JOB_ID}.tar\" \"output$1\"
 rclone copy \"\${SLURM_JOB_ID}.tar\" \"cloud:hpc/containers/outputs/\"
 

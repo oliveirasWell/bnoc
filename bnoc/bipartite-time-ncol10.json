@@ -1,6 +1,6 @@
 {
 	"output_directory": "output10",
-	"output": "bipartite-time-ncol",
+	"output": "bipartite-time-ncol10",
 	"vertices": [
 		91000,
 		91000

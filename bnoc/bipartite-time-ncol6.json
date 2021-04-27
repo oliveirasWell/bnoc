@@ -1,9 +1,9 @@
 {
 	"output_directory": "output6",
-	"output": "bipartite-time-ncol",
+	"output": "bipartite-time-ncol6",
 	"vertices": [
-		72000,
-		72000
+		100000,
+		100000
 	],
 	"schema": [
 		[0,1]
