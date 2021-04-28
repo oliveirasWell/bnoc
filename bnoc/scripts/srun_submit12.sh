@@ -6,7 +6,7 @@
 #SBATCH --partition=fast
 #SBATCH --mail-user=wellington.oliveira@estudante.ufscar.br
 #SBATCH --mail-type=ALL
-#SBATCH --mem=349500MB
+#SBATCH --mem=351500MB
 #SBATCH --account=usuario
 
 . send_notification.sh
