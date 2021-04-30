@@ -2,7 +2,7 @@
 	"output_directory": "output_11",
 	"output": "bipartite-time-ncol11",
 	"vertices": [
-		98500,
+		98000,
 		98000
 	],
 	"schema": [
