@@ -3,7 +3,7 @@
 	"output": "bipartite-time-ncol",
 	"vertices": [
 		99000,
-		99000
+		98000
 	],
 	"schema": [
 		[0,1]
