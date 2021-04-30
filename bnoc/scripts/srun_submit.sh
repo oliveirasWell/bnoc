@@ -3,7 +3,7 @@
 echo "#!/bin/bash
 #SBATCH -J bnoc_$1 # Job name
 #SBATCH -o %j.out # Name of stdout output file (%j expands to jobId)
-#SBATCH -N 1 # Total number of nodes requested
+#SBATCH -N 2 # Total number of nodes requested
 #SBATCH -t 03:00:00
 #SBATCH --partition=fast
 #SBATCH --mail-user=wellington.oliveira@estudante.ufscar.br
