@@ -2,8 +2,8 @@
 	"output_directory": "output_12",
 	"output": "bipartite-time-ncol12",
 	"vertices": [
-		98000,
-		98000
+		100000,
+		100000
 	],
 	"schema": [
 		[0,1]
@@ -22,10 +22,10 @@
 	],
 	"p": null,
 	"dispersion":[
-		0.1
+		0.0001
 	],
 	"mu": [
-		0.1
+		0.0001
 	],
 	"noise": [
 		0.01

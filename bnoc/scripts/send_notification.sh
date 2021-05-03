@@ -3,8 +3,8 @@
 set -e
 
 # Telegram variables
-chatId=""
-botKey=""
+chatId=$CHATID
+botKey=$BOTKEY
 
 sendMsg(){
   curl -s -X POST -H 'Content-Type: application/json' -d "{\"chat_id\": \"$chatId\", \"text\": \"$1\", \"disable_notification\": false}"  "https://api.telegram.org/bot$botKey/sendMessage"
