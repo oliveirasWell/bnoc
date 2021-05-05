@@ -2,7 +2,7 @@
 #SBATCH -J bnoc_12 # Job name
 #SBATCH -o %j.out # Name of stdout output file (%j expands to jobId)
 #SBATCH -N 1 # Total number of nodes requested
-#SBATCH -t 03:00:00
+#SBATCH -t 06:00:00
 #SBATCH --partition=normal
 #SBATCH --mail-user=wellington.oliveira@estudante.ufscar.br
 #SBATCH --mail-type=ALL
