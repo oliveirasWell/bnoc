@@ -2,15 +2,15 @@
 	"output_directory": "output_12",
 	"output": "bipartite-time-ncol12",
 	"vertices": [
-		100000,
-		100000
+		98000,
+		98000
 	],
 	"schema": [
-		[1,1]
+		[0,1]
 	],
 	"communities": [
-		20,
-		20
+		98,
+		98
 	],
 	"x": [
 		0,
@@ -22,10 +22,10 @@
 	],
 	"p": null,
 	"dispersion":[
-		0.0000001
+		0.2
 	],
 	"mu": [
-		0.0000001
+		0.2
 	],
 	"noise": [
 		0.01
