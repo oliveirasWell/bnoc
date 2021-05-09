@@ -2,8 +2,8 @@
 	"output_directory": "output",
 	"output": "bipartite-time-ncol",
 	"vertices": [
-		96000,
-		96000
+		97000,
+		97000
 	],
 	"schema": [
 		[0,1]
@@ -28,7 +28,7 @@
 		0.3
 	],
 	"noise": [
-		0.1
+		0.05
 	],
 	"balanced": true,
 	"unweighted": false,
@@ -41,10 +41,10 @@
 	"output_npy": false,
 	"output_text": true,
 	"save_type": false,
-	"save_gml": true,
+	"save_gml": false,
 	"save_arff": false,
 	"save_ncol": true,
 	"save_cover": false,
 	"save_membership": false,
-	"save_overlap": true
+	"save_overlap": false
 }
