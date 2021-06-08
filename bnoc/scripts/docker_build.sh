@@ -1,0 +1,1 @@
+docker build -t bnoc ../../ && docker run -i -v ${PWD}/artifacts:/app/output -td bnoc
