@@ -15,8 +15,7 @@ SHELL ["conda", "run", "-n", "bnoc", "/bin/bash", "-c"]
 # The code to run when container is started:
 COPY . app/
 
-
-#RUN echo "$cmd"
+RUN echo "$cmd"
 
 #ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "mfbn", "$cmd"]
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "bnoc", "python", "app/bnoc/bnoc.py", "-cnf", "app/bnoc/bipartite-time-ncol.json"]
