@@ -1,0 +1,18 @@
+version: '3'
+services:
+  app:
+    network_mode: host
+    container_name: bnoc
+    stdin_open: true
+    command: "conda run -n bnoc python bnoc/bnoc.py -cnf bnoc/bipartite-time-ncol.json"
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - '.:/app'
+      - '/app/bnoc/output'
+      - '/output'
+      - 'bnoc/output'
+    environment:
+      - CI=true
